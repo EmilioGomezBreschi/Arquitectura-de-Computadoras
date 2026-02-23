@@ -1,0 +1,36 @@
+{C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Actividad04/S4bits_instanciado.v} {1 {vlog -work work -stats=none {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Actividad04/S4bits_instanciado.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module S4bits_instanciado
+
+Top level modules:
+	S4bits_instanciado
+
+} {} {}} {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Actividad04/S8bits_instanciado.v} {1 {vlog -work work -stats=none {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Actividad04/S8bits_instanciado.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module S8bits_instanciado
+
+Top level modules:
+	S8bits_instanciado
+
+} {} {}} {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Actividad03/FA.v} {1 {vlog -work work -stats=none {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Actividad03/FA.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module FA
+
+Top level modules:
+	FA
+
+} {} {}} {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Actividad04/S16bits_instanciado.v} {1 {vlog -work work -stats=none {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Actividad04/S16bits_instanciado.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module S16bits_instanciado
+
+Top level modules:
+	S16bits_instanciado
+
+} {} {}} {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Actividad03/HA.v} {1 {vlog -work work -stats=none {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Actividad03/HA.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module HA
+
+Top level modules:
+	HA
+
+} {} {}}

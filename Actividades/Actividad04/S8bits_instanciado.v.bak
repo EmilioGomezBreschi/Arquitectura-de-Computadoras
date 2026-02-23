@@ -1,0 +1,33 @@
+//1. Declaracion de modulo y sus I/O
+module S8bits_instanciado(
+	input [7:0]A,
+	input [7:0]B,
+	input Cin,
+	output [8:0]S
+);
+
+//2. Cables o registros
+wire [4:0]c1;
+wire [4:0]c2;
+
+//3. Cuerpo del modulo, assigns, isntancias y bloque secuencial
+
+S4bits_instanciado S0(
+	.X(A[3:0]),
+	.Y(B[3:0]),
+	.Cin(Cin),
+	.W(c1)
+);
+
+S4bits_instanciado S1(
+	.X(A[7:4]),
+	.Y(B[7:4]),
+	.Cin(c1[4]),
+	.W(c2)
+);
+
+assign S[3:0] = c1[3:0];
+assign S[7:4] = c2[3:0];
+assign S[8] = c2[4];
+
+endmodule
