@@ -1,0 +1,94 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/18.1
+vcapuccino
+Z0 !s110 1771817891
+!i10b 1
+!s100 kiUhmHF<>n3EQC?Em;@`10
+IAfiOJUdZfWj3RlGGLRoIk3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Notas de clase/Videos
+w1771817888
+8C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Notas de clase/Videos/capuccino.v
+FC:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Notas de clase/Videos/capuccino.v
+L0 4
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1771817891.000000
+!s107 C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Notas de clase/Videos/capuccino.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Notas de clase/Videos/capuccino.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vcapuccino_tb
+R0
+!i10b 1
+!s100 co?28@JGiI0e24gYDJL9Y1
+IZm[^[QO?PXEg6JKV4^^EX1
+R1
+R2
+w1771817889
+8C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Notas de clase/Videos/capuccino_tb.v
+FC:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Notas de clase/Videos/capuccino_tb.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Notas de clase/Videos/capuccino_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Notas de clase/Videos/capuccino_tb.v|
+!i113 1
+R5
+R6
+vexpresso
+R0
+!i10b 1
+!s100 CHFZCE8WJ1ef3P3oMgRQb0
+I79R3H2P`EgKMoi>UZL8Q[0
+R1
+R2
+w1771817884
+8C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Notas de clase/Videos/cafe.v
+FC:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Notas de clase/Videos/cafe.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Notas de clase/Videos/cafe.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Notas de clase/Videos/cafe.v|
+!i113 1
+R5
+R6
+vleche
+R0
+!i10b 1
+!s100 _WFKh]H:5jz:VIOJ8:S_i0
+I_J2T;R52;cZzTCW7??>AD0
+R1
+R2
+w1771817886
+8C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Notas de clase/Videos/leche.v
+FC:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Notas de clase/Videos/leche.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Notas de clase/Videos/leche.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Notas de clase/Videos/leche.v|
+!i113 1
+R5
+R6
