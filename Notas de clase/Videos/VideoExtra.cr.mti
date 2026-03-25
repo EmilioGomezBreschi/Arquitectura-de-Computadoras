@@ -1,0 +1,29 @@
+{C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Notas de clase/Videos/cafe.v} {1 {vlog -work work -stats=none {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Notas de clase/Videos/cafe.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module expresso
+
+Top level modules:
+	expresso
+
+} {} {}} {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Notas de clase/Videos/capuccino.v} {1 {vlog -work work -stats=none {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Notas de clase/Videos/capuccino.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module capuccino
+
+Top level modules:
+	capuccino
+
+} {} {}} {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Notas de clase/Videos/leche.v} {1 {vlog -work work -stats=none {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Notas de clase/Videos/leche.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module leche
+
+Top level modules:
+	leche
+
+} {} {}} {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Notas de clase/Videos/capuccino_tb.v} {1 {vlog -work work -stats=none {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Notas de clase/Videos/capuccino_tb.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module capuccino_tb
+
+Top level modules:
+	capuccino_tb
+
+} {} {}}
