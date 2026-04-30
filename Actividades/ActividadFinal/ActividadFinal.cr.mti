@@ -1,0 +1,59 @@
+{C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/TB_DPTR.v} {1 {vlog -work work -stats=none {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/TB_DPTR.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module TB_DPTR
+
+Top level modules:
+	TB_DPTR
+
+} {} {}} {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/Mux2_1_32.v} {1 {vlog -work work -stats=none {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/Mux2_1_32.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Mux2_1_32
+
+Top level modules:
+	Mux2_1_32
+
+} {} {}} {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/BR.v} {2 {vlog -work work -stats=none {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/BR.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module BR
+** Warning: C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/BR.v(37): (vlog-2182) 'carnita' might be read before written in always_comb or always @* block.
+
+Top level modules:
+	BR
+
+} {} {}} {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/TB_DPTR.v
+} {0 {vlog -work work -stats=none {C:\Users\lime1\Documents\CUCEI\Cuarto Semestre\Arquitectura\ActividadFinal\TB_DPTR.v
+}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+** Error: (vlog-7) Failed to open design unit file "C:\Users\lime1\Documents\CUCEI\Cuarto Semestre\Arquitectura\ActividadFinal\TB_DPTR.v
+" in read mode.
+No such file or directory. (errno = ENOENT)
+
+} {4.0 5.0} {}} {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/U_Control.v} {1 {vlog -work work -stats=none {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/U_Control.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module U_Control
+
+Top level modules:
+	U_Control
+
+} {} {}} {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/DPTR.v} {1 {vlog -work work -stats=none {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/DPTR.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module DPTR
+
+Top level modules:
+	DPTR
+
+} {} {}} {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/MemDatos.v} {1 {vlog -work work -stats=none {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/MemDatos.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module MemDatos
+
+Top level modules:
+	MemDatos
+
+} {} {}} {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/ALU_Ctrl.v} {1 {vlog -work work -stats=none {C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/ALU_Ctrl.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ALU_Ctrl
+
+Top level modules:
+	ALU_Ctrl
+
+} {} {}}

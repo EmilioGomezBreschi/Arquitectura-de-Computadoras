@@ -1,0 +1,202 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/Actividad06
+valu
+Z0 !s110 1777588063
+!i10b 1
+!s100 2NO`YWodMe0D=>746FLEZ2
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+ICQ9mSeUU3]:EM;e]]OE:20
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal
+w1777588059
+8C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/alu.v
+FC:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/alu.v
+!i122 22
+L0 3 27
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1777588063.000000
+!s107 C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/alu.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/alu.v|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+vALU_Ctrl
+R0
+!i10b 1
+!s100 X_oNiNinlLC;d8]TF7Z=_0
+R1
+I6@:]SKC<`X>=fZ<H;MD_J3
+R2
+R3
+w1777586924
+8C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/ALU_Ctrl.v
+FC:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/ALU_Ctrl.v
+!i122 23
+L0 3 35
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/ALU_Ctrl.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/ALU_Ctrl.v|
+!i113 1
+R6
+R7
+n@a@l@u_@ctrl
+vBR
+R0
+!i10b 1
+!s100 2]5`Ma6RnlA0aCflD`ODF0
+R1
+I_T4@>fSkhi8UE:>?=?ATb1
+R2
+R3
+w1777586315
+8C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/BR.v
+FC:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/BR.v
+!i122 24
+L0 4 42
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/BR.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/BR.v|
+!i113 1
+R6
+R7
+n@b@r
+vDPTR
+R0
+!i10b 1
+!s100 ;@[KY[OlF=2PLX25e>=k@0
+R1
+IKBBNUH=:YiXknh`lTL3Dm1
+R2
+R3
+w1777586920
+8C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/DPTR.v
+FC:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/DPTR.v
+!i122 28
+L0 3 107
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/DPTR.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/DPTR.v|
+!i113 1
+R6
+R7
+n@d@p@t@r
+vMemDatos
+R0
+!i10b 1
+!s100 l_F[[ANzPI?bn]cD3[iOB2
+R1
+I08OHiRRJ@=[8cYW`2<9kl2
+R2
+R3
+w1777586317
+8C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/MemDatos.v
+FC:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/MemDatos.v
+!i122 25
+L0 3 39
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/MemDatos.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/MemDatos.v|
+!i113 1
+R6
+R7
+n@mem@datos
+vMux2_1_32
+R0
+!i10b 1
+!s100 ?0cD@8A>jIJ^_;N^X^jVk0
+R1
+IQA5Bl^?:66B3:<6>bniH21
+R2
+R3
+w1777586923
+8C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/Mux2_1_32.v
+FC:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/Mux2_1_32.v
+!i122 27
+L0 3 13
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/Mux2_1_32.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/Mux2_1_32.v|
+!i113 1
+R6
+R7
+n@mux2_1_32
+vTB_DPTR
+R0
+!i10b 1
+!s100 BW>`GM1P3b6mSLf3BjS523
+R1
+IZT;MJMKbK2T;Ygf9PWeIC3
+R2
+R3
+w1777587698
+8C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/TB_DPTR.v
+FC:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/TB_DPTR.v
+!i122 29
+L0 4 74
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/TB_DPTR.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/TB_DPTR.v|
+!i113 1
+R6
+R7
+n@t@b_@d@p@t@r
+vU_Control
+R0
+!i10b 1
+!s100 KX1D45zY^U62zCm3b3HFL3
+R1
+IiA<3Dnm<Yl2_7TASI?O?F0
+R2
+R3
+w1777586319
+8C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/U_Control.v
+FC:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/U_Control.v
+!i122 26
+L0 4 34
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/U_Control.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/U_Control.v|
+!i113 1
+R6
+R7
+n@u_@control

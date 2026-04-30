@@ -1,0 +1,53 @@
+# Compile of alu.v was successful.
+# Compile of ALU_Ctrl.v was successful.
+# Compile of BR.v was successful with warnings.
+# Compile of MemDatos.v was successful.
+# Compile of U_Control.v was successful.
+# Compile of Mux2_1_32.v was successful.
+# Compile of DPTR.v was successful.
+# Compile of TB_DPTR.v was successful.
+# 8 compiles, 0 failed with no errors.
+vsim -gui work.TB_DPTR
+# vsim -gui work.TB_DPTR 
+# Start time: 16:22:10 on Apr 30,2026
+# Loading work.TB_DPTR
+# Loading work.DPTR
+# Loading work.U_Control
+# Loading work.BR
+# Loading work.ALU_Ctrl
+# Loading work.alu
+# Loading work.MemDatos
+# Loading work.Mux2_1_32
+add wave -position end  sim:/TB_DPTR/instr
+add wave -position end  sim:/TB_DPTR/read_data1
+add wave -position end  sim:/TB_DPTR/read_data2
+add wave -position end  sim:/TB_DPTR/alu_result
+add wave -position end  sim:/TB_DPTR/data_mem_out
+add wave -position end  sim:/TB_DPTR/write_back_data
+run
+# ** Note: $stop    : C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/TB_DPTR.v(74)
+#    Time: 100 ns  Iteration: 0  Instance: /TB_DPTR
+# Break in Module TB_DPTR at C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/TB_DPTR.v line 74
+# Compile of alu.v was successful.
+# Compile of ALU_Ctrl.v was successful.
+# Compile of BR.v was successful with warnings.
+# Compile of MemDatos.v was successful.
+# Compile of U_Control.v was successful.
+# Compile of Mux2_1_32.v was successful.
+# Compile of DPTR.v was successful.
+# Compile of TB_DPTR.v was successful.
+# 8 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB_DPTR
+# Loading work.DPTR
+# Loading work.U_Control
+# Loading work.BR
+# Loading work.ALU_Ctrl
+# Loading work.alu
+# Loading work.MemDatos
+# Loading work.Mux2_1_32
+run
+# ** Note: $stop    : C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/TB_DPTR.v(74)
+#    Time: 100 ns  Iteration: 0  Instance: /TB_DPTR
+# Break in Module TB_DPTR at C:/Users/lime1/Documents/CUCEI/Cuarto Semestre/Arquitectura/ActividadFinal/TB_DPTR.v line 74
