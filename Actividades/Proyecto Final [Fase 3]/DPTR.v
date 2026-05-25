@@ -10,7 +10,9 @@ module DPTR(
 	output [31:0] pc_siguiente,
 	output pc_src,
 	output jump_out,
+	output jal_out,
 	output [31:0] jump_address_out,
+	output [31:0] ra_data_out,
 
 	output [31:0] alu_result,
 	output [31:0] data_mem_out,
@@ -22,12 +24,12 @@ module DPTR(
 //2. definen comp. internos Reg o wires
 
 // IF
-
 wire [31:0] pc_out;
 wire [31:0] pc_plus_4;
 wire [31:0] pc_next;
 wire [31:0] pc_branch;
 wire [31:0] jump_address;
+
 
 // IF/ID
 
@@ -51,6 +53,7 @@ wire [25:0] jump_index;
 
 wire regDst;
 wire jump;
+wire jal;
 wire branch;
 wire memToReg;
 wire memToWrite;
@@ -82,6 +85,7 @@ wire idex_memToWrite;
 wire idex_memToRead;
 wire idex_aluSrc;
 wire idex_regWrite;
+wire idex_jal;
 wire [2:0] idex_aluOp;
 
 wire [31:0] idex_pc;
@@ -112,12 +116,14 @@ wire exmem_memToReg;
 wire exmem_memToWrite;
 wire exmem_memToRead;
 wire exmem_regWrite;
+wire exmem_jal;
 
 wire [31:0] exmem_branch_target;
 wire exmem_ifzero;
 wire [31:0] exmem_alu_result;
 wire [31:0] exmem_write_data;
 wire [4:0] exmem_write_register;
+wire [31:0] exmem_link_address;
 
 
 // MEM
@@ -129,15 +135,19 @@ wire [31:0] mem_read_data;
 
 wire memwb_memToReg;
 wire memwb_regWrite;
+wire memwb_jal;
 
 wire [31:0] memwb_read_data;
 wire [31:0] memwb_alu_result;
 wire [4:0] memwb_write_register;
+wire [31:0] memwb_link_address;
 
 
 // WB
 
 wire [31:0] mux_wb_out;
+wire [31:0] final_write_data;
+wire [4:0] final_write_register;
 
 // NOP
 wire is_nop_id;
@@ -156,7 +166,7 @@ assign pc_plus_4 = pc_out + 32'd4;
 // Primero se decide si hay branch
 assign pc_branch = (pc_src === 1'b1) ? exmem_branch_target : pc_plus_4;
 
-// Luego se decide si hay jump
+// Luego se decide si hay jump o jal
 assign pc_next = (jump === 1'b1) ? jump_address : pc_branch;
 
 PC PC0(
@@ -207,6 +217,7 @@ U_Control UC(
 	.op(op),
 	.regDst(regDst),
 	.jump(jump),
+	.jal(jal),
 	.branch(branch),
 	.memToReg(memToReg),
 	.memToWrite(memToWrite),
@@ -228,8 +239,8 @@ assign regWrite_id_final = regWrite & ~is_nop_id;
 BR BancoReg(
 	.AR1(rs),
 	.AR2(rt),
-	.AW(memwb_write_register),
-	.DW(mux_wb_out),
+	.AW(final_write_register),
+	.DW(final_write_data),
 	.RegWrite(memwb_regWrite),
 	.DR1(br_out1),
 	.DR2(br_out2)
@@ -264,6 +275,7 @@ Buffer_ID_EX ID_EX(
 	.memToRead_in(memToRead),
 	.aluSrc_in(aluSrc),
 	.regWrite_in(regWrite_id_final),
+	.jal_in(jal),
 	.aluOp_in(aluOp),
 
 	.pc_in(ifid_pc),
@@ -282,6 +294,7 @@ Buffer_ID_EX ID_EX(
 	.memToRead_out(idex_memToRead),
 	.aluSrc_out(idex_aluSrc),
 	.regWrite_out(idex_regWrite),
+	.jal_out(idex_jal),
 	.aluOp_out(idex_aluOp),
 
 	.pc_out(idex_pc),
@@ -358,24 +371,28 @@ Buffer_EX_MEM EX_MEM(
 	.memToWrite_in(idex_memToWrite),
 	.memToRead_in(idex_memToRead),
 	.regWrite_in(idex_regWrite),
+	.jal_in(idex_jal),
 
 	.branch_target_in(branch_target_ex),
 	.ifzero_in(ifzero),
 	.alu_result_in(alu_out),
 	.write_data_in(idex_read_data2),
 	.write_register_in(write_register_ex),
+	.link_address_in(idex_pc),
 
 	.branch_out(exmem_branch),
 	.memToReg_out(exmem_memToReg),
 	.memToWrite_out(exmem_memToWrite),
 	.memToRead_out(exmem_memToRead),
 	.regWrite_out(exmem_regWrite),
+	.jal_out(exmem_jal),
 
 	.branch_target_out(exmem_branch_target),
 	.ifzero_out(exmem_ifzero),
 	.alu_result_out(exmem_alu_result),
 	.write_data_out(exmem_write_data),
-	.write_register_out(exmem_write_register)
+	.write_register_out(exmem_write_register),
+	.link_address_out(exmem_link_address)
 );
 
 
@@ -410,17 +427,21 @@ Buffer_MEM_WB MEM_WB(
 
 	.memToReg_in(exmem_memToReg),
 	.regWrite_in(exmem_regWrite),
+	.jal_in(exmem_jal),
 
 	.read_data_in(mem_read_data),
 	.alu_result_in(exmem_alu_result),
 	.write_register_in(exmem_write_register),
+	.link_address_in(exmem_link_address),
 
 	.memToReg_out(memwb_memToReg),
 	.regWrite_out(memwb_regWrite),
+	.jal_out(memwb_jal),
 
 	.read_data_out(memwb_read_data),
 	.alu_result_out(memwb_alu_result),
-	.write_register_out(memwb_write_register)
+	.write_register_out(memwb_write_register),
+	.link_address_out(memwb_link_address)
 );
 
 
@@ -435,19 +456,30 @@ Mux2_1_32 MUX_WB(
 );
 
 
+// WB - Mecanismo JAL
+// Si es JAL, escribe PC+4 en R31
+// Si no, usa el write back normal
+
+
+assign final_write_register = (memwb_jal == 1'b1) ? 5'd31 : memwb_write_register;
+assign final_write_data     = (memwb_jal == 1'b1) ? memwb_link_address : mux_wb_out;
+
+
 // Salidas visibles para simulacion
 
 
-assign pc_actual       = pc_out;
-assign pc_siguiente    = pc_next;
-assign branch_target   = exmem_branch_target;
-assign jump_out        = jump;
+assign pc_actual        = pc_out;
+assign pc_siguiente     = pc_next;
+assign branch_target    = exmem_branch_target;
+assign jump_out         = jump;
+assign jal_out          = jal;
 assign jump_address_out = jump_address;
+assign ra_data_out      = final_write_data;
 
-assign alu_result      = exmem_alu_result;
-assign data_mem_out    = mem_read_data;
-assign write_back_data = mux_wb_out;
-assign read_data1      = br_out1;
-assign read_data2      = br_out2;
+assign alu_result       = exmem_alu_result;
+assign data_mem_out     = mem_read_data;
+assign write_back_data  = final_write_data;
+assign read_data1       = br_out1;
+assign read_data2       = br_out2;
 
 endmodule

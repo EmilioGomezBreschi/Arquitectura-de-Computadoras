@@ -5,6 +5,7 @@ module U_Control(
 	input [5:0] op,
 	output reg regDst,
 	output reg jump,
+	output reg jal,
 	output reg branch,
 	output reg memToReg,
 	output reg memToWrite,
@@ -23,11 +24,12 @@ always @*
 begin
 	case(op)
 
-		// Tipo R
+		// Tipo R: add, sub, and, or, slt, nop
 		6'b000000:
 		begin
 			regDst     = 1'b1;
 			jump       = 1'b0;
+			jal        = 1'b0;
 			branch     = 1'b0;
 			memToReg   = 1'b0;
 			memToWrite = 1'b0;
@@ -42,6 +44,7 @@ begin
 		begin
 			regDst     = 1'b0;
 			jump       = 1'b0;
+			jal        = 1'b0;
 			branch     = 1'b0;
 			memToReg   = 1'b0;
 			memToWrite = 1'b0;
@@ -56,6 +59,7 @@ begin
 		begin
 			regDst     = 1'b0;
 			jump       = 1'b0;
+			jal        = 1'b0;
 			branch     = 1'b0;
 			memToReg   = 1'b0;
 			memToWrite = 1'b0;
@@ -70,6 +74,7 @@ begin
 		begin
 			regDst     = 1'b0;
 			jump       = 1'b0;
+			jal        = 1'b0;
 			branch     = 1'b0;
 			memToReg   = 1'b0;
 			memToWrite = 1'b0;
@@ -84,6 +89,7 @@ begin
 		begin
 			regDst     = 1'b0;
 			jump       = 1'b0;
+			jal        = 1'b0;
 			branch     = 1'b0;
 			memToReg   = 1'b0;
 			memToWrite = 1'b0;
@@ -98,6 +104,7 @@ begin
 		begin
 			regDst     = 1'b0;
 			jump       = 1'b0;
+			jal        = 1'b0;
 			branch     = 1'b0;
 			memToReg   = 1'b1;
 			memToWrite = 1'b0;
@@ -112,6 +119,7 @@ begin
 		begin
 			regDst     = 1'b0;
 			jump       = 1'b0;
+			jal        = 1'b0;
 			branch     = 1'b0;
 			memToReg   = 1'b0;
 			memToWrite = 1'b1;
@@ -126,6 +134,7 @@ begin
 		begin
 			regDst     = 1'b0;
 			jump       = 1'b0;
+			jal        = 1'b0;
 			branch     = 1'b1;
 			memToReg   = 1'b0;
 			memToWrite = 1'b0;
@@ -140,6 +149,7 @@ begin
 		begin
 			regDst     = 1'b0;
 			jump       = 1'b1;
+			jal        = 1'b0;
 			branch     = 1'b0;
 			memToReg   = 1'b0;
 			memToWrite = 1'b0;
@@ -149,11 +159,27 @@ begin
 			regWrite   = 1'b0;
 		end
 
+		// jal
+		6'b000011:
+		begin
+			regDst     = 1'b0;
+			jump       = 1'b1;
+			jal        = 1'b1;
+			branch     = 1'b0;
+			memToReg   = 1'b0;
+			memToWrite = 1'b0;
+			memToRead  = 1'b0;
+			aluSrc     = 1'b0;
+			aluOp      = 3'b110;
+			regWrite   = 1'b1;
+		end
+
 		// Default
 		default:
 		begin
 			regDst     = 1'b0;
 			jump       = 1'b0;
+			jal        = 1'b0;
 			branch     = 1'b0;
 			memToReg   = 1'b0;
 			memToWrite = 1'b0;

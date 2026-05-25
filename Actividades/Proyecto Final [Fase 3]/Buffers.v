@@ -1,11 +1,8 @@
-
 `timescale 1ns/1ns
-
 
 // BUFFER IF/ID
 // Guarda PC + 4 e instruccion
 // Etapa: Instruction Fetch -> Instruction Decode
-
 
 module Buffer_IF_ID(
 	input clk,
@@ -36,10 +33,10 @@ end
 
 endmodule
 
-
 // BUFFER ID/EX
 // Guarda señales y datos que salen de Decode
 // Etapa: Instruction Decode -> Execute
+
 
 module Buffer_ID_EX(
 	input clk,
@@ -53,6 +50,7 @@ module Buffer_ID_EX(
 	input memToRead_in,
 	input aluSrc_in,
 	input regWrite_in,
+	input jal_in,
 	input [2:0] aluOp_in,
 
 	// Datos
@@ -74,6 +72,7 @@ module Buffer_ID_EX(
 	output reg memToRead_out,
 	output reg aluSrc_out,
 	output reg regWrite_out,
+	output reg jal_out,
 	output reg [2:0] aluOp_out,
 
 	// Datos de salida
@@ -103,6 +102,7 @@ begin
 		memToRead_out <= 1'b0;
 		aluSrc_out <= 1'b0;
 		regWrite_out <= 1'b0;
+		jal_out <= 1'b0;
 		aluOp_out <= 3'b000;
 
 		pc_out <= 32'd0;
@@ -123,6 +123,7 @@ begin
 		memToRead_out <= memToRead_in;
 		aluSrc_out <= aluSrc_in;
 		regWrite_out <= regWrite_in;
+		jal_out <= jal_in;
 		aluOp_out <= aluOp_in;
 
 		pc_out <= pc_in;
@@ -138,7 +139,6 @@ end
 
 endmodule
 
-
 // BUFFER EX/MEM
 // Guarda resultados que salen de Execute
 // Etapa: Execute -> Memory
@@ -153,6 +153,7 @@ module Buffer_EX_MEM(
 	input memToWrite_in,
 	input memToRead_in,
 	input regWrite_in,
+	input jal_in,
 
 	// Datos
 	input [31:0] branch_target_in,
@@ -160,6 +161,7 @@ module Buffer_EX_MEM(
 	input [31:0] alu_result_in,
 	input [31:0] write_data_in,
 	input [4:0] write_register_in,
+	input [31:0] link_address_in,
 
 	// Señales de control de salida
 	output reg branch_out,
@@ -167,13 +169,15 @@ module Buffer_EX_MEM(
 	output reg memToWrite_out,
 	output reg memToRead_out,
 	output reg regWrite_out,
+	output reg jal_out,
 
 	// Datos de salida
 	output reg [31:0] branch_target_out,
 	output reg ifzero_out,
 	output reg [31:0] alu_result_out,
 	output reg [31:0] write_data_out,
-	output reg [4:0] write_register_out
+	output reg [4:0] write_register_out,
+	output reg [31:0] link_address_out
 );
 
 //2. Comp. internos = NA
@@ -189,12 +193,14 @@ begin
 		memToWrite_out <= 1'b0;
 		memToRead_out <= 1'b0;
 		regWrite_out <= 1'b0;
+		jal_out <= 1'b0;
 
 		branch_target_out <= 32'd0;
 		ifzero_out <= 1'b0;
 		alu_result_out <= 32'd0;
 		write_data_out <= 32'd0;
 		write_register_out <= 5'd0;
+		link_address_out <= 32'd0;
 	end
 	else
 	begin
@@ -203,16 +209,19 @@ begin
 		memToWrite_out <= memToWrite_in;
 		memToRead_out <= memToRead_in;
 		regWrite_out <= regWrite_in;
+		jal_out <= jal_in;
 
 		branch_target_out <= branch_target_in;
 		ifzero_out <= ifzero_in;
 		alu_result_out <= alu_result_in;
 		write_data_out <= write_data_in;
 		write_register_out <= write_register_in;
+		link_address_out <= link_address_in;
 	end
 end
 
 endmodule
+
 
 // BUFFER MEM/WB
 // Guarda datos que salen de Memory
@@ -225,20 +234,24 @@ module Buffer_MEM_WB(
 	// Señales de control
 	input memToReg_in,
 	input regWrite_in,
+	input jal_in,
 
 	// Datos
 	input [31:0] read_data_in,
 	input [31:0] alu_result_in,
 	input [4:0] write_register_in,
+	input [31:0] link_address_in,
 
 	// Señales de control de salida
 	output reg memToReg_out,
 	output reg regWrite_out,
+	output reg jal_out,
 
 	// Datos de salida
 	output reg [31:0] read_data_out,
 	output reg [31:0] alu_result_out,
-	output reg [4:0] write_register_out
+	output reg [4:0] write_register_out,
+	output reg [31:0] link_address_out
 );
 
 //2. Comp. internos = NA
@@ -251,19 +264,23 @@ begin
 	begin
 		memToReg_out <= 1'b0;
 		regWrite_out <= 1'b0;
+		jal_out <= 1'b0;
 
 		read_data_out <= 32'd0;
 		alu_result_out <= 32'd0;
 		write_register_out <= 5'd0;
+		link_address_out <= 32'd0;
 	end
 	else
 	begin
 		memToReg_out <= memToReg_in;
 		regWrite_out <= regWrite_in;
+		jal_out <= jal_in;
 
 		read_data_out <= read_data_in;
 		alu_result_out <= alu_result_in;
 		write_register_out <= write_register_in;
+		link_address_out <= link_address_in;
 	end
 end
 

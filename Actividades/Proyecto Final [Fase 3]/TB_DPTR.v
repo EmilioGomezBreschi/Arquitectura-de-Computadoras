@@ -12,7 +12,9 @@ wire [31:0] pc_actual;
 wire [31:0] pc_siguiente;
 wire pc_src;
 wire jump_out;
+wire jal_out;
 wire [31:0] jump_address_out;
+wire [31:0] ra_data_out;
 
 wire [31:0] alu_result;
 wire [31:0] data_mem_out;
@@ -40,7 +42,9 @@ DPTR uut(
 	.pc_siguiente(pc_siguiente),
 	.pc_src(pc_src),
 	.jump_out(jump_out),
+	.jal_out(jal_out),
 	.jump_address_out(jump_address_out),
+	.ra_data_out(ra_data_out),
 
 	.alu_result(alu_result),
 	.data_mem_out(data_mem_out),
@@ -70,12 +74,13 @@ begin
 	// R8 = 10
 	mem_instr[1] = 32'h2008000A;
 
-	// PC 8: j 20
-	// Salta a direccion 20
+	// PC 8: jal 20
+	// Salta a direccion 20 y guarda PC+4 = 12 en R31
 	// target = 20 / 4 = 5
-	mem_instr[2] = 32'h08000005;
+	mem_instr[2] = 32'h0C000005;
 
 	// PC 12: nop
+	// Se deja NOP por delay/buffers
 	mem_instr[3] = 32'h00000000;
 
 	// PC 16: nop
@@ -113,10 +118,14 @@ begin
 	// PC 48: nop
 	mem_instr[12] = 32'h00000000;
 
+
 	reset = 1'b1;
 	#12;
 
 	reset = 1'b0;
+
+	// Se deja correr suficiente tiempo porque hay buffers
+	#280;
 
 	$stop;
 end
