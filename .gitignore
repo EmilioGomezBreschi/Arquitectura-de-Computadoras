@@ -13,6 +13,8 @@
 *.bsf
 *.mpf
 
+*.zip
+
 # ignore simulation output of ModelSim
 wlf*
 *.wlf

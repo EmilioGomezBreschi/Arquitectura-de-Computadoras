@@ -11,20 +11,27 @@ module MemDatos(
 
 //2. Comp. internos
 reg [31:0] sram[0:127];
+integer i;
+
 
 //3. Cuerpo, assigns, instancias y bloque secuencial
 
 initial
 begin
+	// Inicializar toda la memoria en cero para evitar X
+	for(i = 0; i < 128; i = i + 1)
+	begin
+		sram[i] = 32'd0;
+	end
 
-//$readmeamb("data.txt",sram)
-	sram[0]=32'd100;
-	sram[1]=32'd200;
-	sram[2]=32'd300;
-	sram[3]=32'd400;
-	sram[4]=32'd500;
-	sram[5]=32'd600;
-	sram[6]=32'd700;
+	// Valores opcionales de prueba
+	sram[0] = 32'd100;
+	sram[1] = 32'd200;
+	sram[2] = 32'd300;
+	sram[3] = 32'd400;
+	sram[4] = 32'd500;
+	sram[5] = 32'd600;
+	sram[6] = 32'd700;
 end
 
 always @*

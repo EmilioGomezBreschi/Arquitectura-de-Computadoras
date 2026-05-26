@@ -13,6 +13,7 @@ module BR(
 
 //2. definen comp. internos Reg o wires
 reg [31:0] carnita[0:31];
+integer i;
 
 
 //3. cuerpo del modulo, assigns, instancias
@@ -20,7 +21,14 @@ reg [31:0] carnita[0:31];
 
 initial
 begin
-	$readmemb("TestF3_MemInst.mem", carnita);
+	// Inicializar todos los registros en cero
+	for(i = 0; i < 32; i = i + 1)
+	begin
+		carnita[i] = 32'd0;
+	end
+
+	// En MIPS, $zero siempre debe valer 0
+	carnita[0] = 32'd0;
 end
 
 // Lectura de dos registros
@@ -33,10 +41,13 @@ end
 // Escritura en el registro destino
 always @*
 begin
-	if(RegWrite)
+	if(RegWrite && AW != 5'd0)
 	begin
 		carnita[AW] = DW;
 	end
+
+	// Proteger $zero
+	carnita[0] = 32'd0;
 end
 
 endmodule
